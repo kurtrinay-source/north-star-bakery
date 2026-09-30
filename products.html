@@ -6,6 +6,7 @@
   <meta name="description" content="Browse North Star Bakery breads, pastries, and cakes with pricing ranges.">
   <title>Our Products | North Star Bakery</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -43,10 +44,18 @@
       <p>Price range: $25 to $120 depending on size and design</p>
       <p><a href="contact.html">Request a custom cake pre-order</a></p>
     </section>
+    <section id="favorites">
+      <h2>Build Your Favorites List</h2>
+      <p>Tap an item to save it as a favorite. Your list is saved on this device, and it will be added to your pre-order request automatically.</p>
+      <div id="product-picker" class="product-picker"></div>
+      <h3>Your Favorites (<span id="favorites-count">0</span>)</h3>
+      <ul id="favorites-list"></ul>
+      <button type="button" id="clear-favorites" class="secondary-btn">Clear Favorites</button>
+      <p><a href="contact.html">Pre-order your favorites</a></p>
+    </section>
   </main>
   <footer>
     <p>&copy; 2026 North Star Bakery. Baked by hand, shared with the neighborhood.</p>
   </footer>
 </body>
 </html>
-
