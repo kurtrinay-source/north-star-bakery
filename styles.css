@@ -224,3 +224,71 @@ footer {
     width: auto;
   }
 }
+/* ---------- Touchstone 4: favorites and form feedback ---------- */
+#favorites {
+  flex-basis: 100%;
+}
+
+.product-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.fav-btn {
+  background-color: #FBF7F0;
+  color: #1F2A44;
+  border: 2px solid #1F2A44;
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: left;
+  width: 100%;
+}
+
+.fav-btn.is-fav {
+  background-color: #E3A82B;
+  font-weight: bold;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 2px solid #1F2A44;
+  font-size: 1rem;
+}
+
+.error-message {
+  color: #B3261E;
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0;
+  min-height: 1.2em;
+}
+
+#request-type-error {
+  grid-column: 1 / -1;
+}
+
+input.invalid,
+textarea.invalid {
+  border: 2px solid #B3261E;
+}
+
+.success-message {
+  color: #1F2A44;
+  font-weight: bold;
+}
+
+.prefill-note {
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .product-picker {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .fav-btn {
+    width: auto;
+  }
+}
