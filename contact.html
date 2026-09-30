@@ -6,6 +6,7 @@
   <meta name="description" content="Contact North Star Bakery, send a pre-order or inquiry, and view our location and hours.">
   <title>Contact and Pre-Orders | North Star Bakery</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -24,13 +25,16 @@
     <section>
       <h2>Inquiry and Pre-Order Request</h2>
       <p>Fields marked required must be completed. We will confirm your request by email within one business day.</p>
-      <form action="#" method="post">
+      <p id="prefill-note" class="prefill-note" aria-live="polite"></p>
+      <form id="order-form" action="#" method="post" novalidate>
         <fieldset>
           <legend>Your Contact Information</legend>
           <label for="name">Full name (required)</label>
-          <input type="text" id="name" name="name" required minlength="2" maxlength="60" autocomplete="name">
+          <input type="text" id="name" name="name" required minlength="2" maxlength="60" autocomplete="name" aria-describedby="name-error">
+          <p class="error-message" id="name-error" aria-live="polite"></p>
           <label for="email">Email address (required)</label>
-          <input type="email" id="email" name="email" required autocomplete="email">
+          <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
+          <p class="error-message" id="email-error" aria-live="polite"></p>
         </fieldset>
         <fieldset>
           <legend>Request Type (required)</legend>
@@ -40,17 +44,21 @@
           <label for="question">General question</label>
           <input type="radio" id="event" name="request-type" value="event-order">
           <label for="event">Event or catering order</label>
+          <p class="error-message" id="request-type-error" aria-live="polite"></p>
         </fieldset>
         <fieldset>
           <legend>Order Details</legend>
           <label for="pickup-date">Pickup date (required)</label>
-          <input type="date" id="pickup-date" name="pickup-date" required min="2026-10-01">
+          <input type="date" id="pickup-date" name="pickup-date" required aria-describedby="pickup-date-error">
+          <p class="error-message" id="pickup-date-error" aria-live="polite"></p>
           <label for="item-details">Item details (required)</label>
-          <textarea id="item-details" name="item-details" rows="4" required minlength="10" maxlength="500"></textarea>
+          <textarea id="item-details" name="item-details" rows="4" required minlength="10" maxlength="500" aria-describedby="item-details-error"></textarea>
+          <p class="error-message" id="item-details-error" aria-live="polite"></p>
           <label for="allergy-notes">Allergy notes (optional)</label>
           <textarea id="allergy-notes" name="allergy-notes" rows="3" maxlength="300"></textarea>
         </fieldset>
         <button type="submit">Send Request</button>
+        <p id="form-success" class="success-message" aria-live="polite"></p>
       </form>
     </section>
     <section>
